@@ -37,13 +37,13 @@
                                             PRIMARY KEY (userID))";
 
     // this sql query has been tested and works
-
     $createDeviceTable = "CREATE TABLE Devices (deviceID INT NOT NULL,
                                             userID INT,
                                             category ENUM('desktop', 'laptop', 'tablet') NOT NULL,
                                             name varchar(30) NOT NULL,
                                             FOREIGN KEY (userID) REFERENCES Users(userID))
                                             PRIMARY KEY(deviceID)";
+    // this sql query has been tested and works
 
     
     $createRepairJobTable = "CREATE TABLE RepairJobs (repairJobID INT NOT NULL,
@@ -53,11 +53,26 @@
                                             difficulty ENUM('easy', 'medium', 'hard') DEFAULT 'easy' NOT NULL,
                                             status ENUM('queued', 'inspection', 'repairing', 'ordering part', 'done', 'paid') NOT NULL,
                                             etc INT NOT NULL, 
-                                            cost DECIMAL(10,2) NOT NULL
-                                            ) ";
-    //is the Estimated number of Days until Completion
+                                            cost DECIMAL(10,2) NOT NULL ) ";
 
-    $createTechnicianTable = "CREATE TABLE technicians (technicianID)";
+    //is the Estimated number of Days until Completion
+    // this sql query has been tested and works
+
+    $createPartsTable = "CREATE TABLE parts (PartID INT NOT NULL PRIMARY KEY, 
+                                                Price DECIMAL (10,2), 
+                                                Name VARCHAR (30), 
+                                                repairJobID INT, 
+                                                FOREIGN KEY (repairJobID) REFERENCES RepairJobs(repairJobID) )";
+
+    $createTechnicianTable = "CREATE TABLE technician (TechnicianID INT NOT NULL PRIMARY KEY,
+                                                        Salary DECIMAL(10, 2), 
+                                                        Experience VARCHAR (30), 
+                                                        Picture VARCHAR (30) );";
+
+    $createJobGroupTable = "CREATE TABLE jobGroup (repairJobID INT NOT NULL, 
+                                                    TechnicianID INT NOT NULL, 
+                                                    FOREIGN KEY (repairJobID) REFERENCES RepairJobs(repairJobID)
+                                                    FOREIGN KEY (TechnicianID) REFERENCES technician(TechnicianID) )";
 
     function showTables() {
         $conn = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE) or die("Failed to connect to database");

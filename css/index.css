@@ -1,0 +1,71 @@
+/* ids */
+#index-page {
+    padding: 0 2rem;
+}
+
+#index-page .row-container {
+    justify-content: space-between;
+}
+
+#index-page .user-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#index-page button {
+    border-width: 0;
+    height: 3rem;
+    margin-left: 2rem;
+    width: 10rem;
+    border: 3px solid var(--primary);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+}
+
+#index-page a {
+    color: black;
+}
+
+/* index header css */
+.logo {
+    height: 5rem;
+}
+
+
+
+
+
+/* classess */
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+}
+
+.contact-details ul {
+    list-style-type: none;
+}
+
+.icon-container {
+    /* border: 1px solid orange; */
+    display: flex;
+    align-items: center;
+}
+
+.icon-container i{
+    margin-left: 1rem;
+}
+.listing {
+    max-width: 30vw;
+    padding: 2rem;
+}
+
+.listing-container {
+
+    display: flex;
+    justify-content: space-around;
+
+}

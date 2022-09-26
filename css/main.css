@@ -1,0 +1,28 @@
+/* elements */
+
+* {
+    --primary: #2fcc76 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* classes */
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+
