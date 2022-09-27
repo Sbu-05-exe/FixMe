@@ -25,7 +25,6 @@
 
     require_once("config.php");
     //connect to db
-    
 
     //CREATE QUERIES
     $createUsertable = "CREATE TABLE Users ( userID INT NOT NULL, 

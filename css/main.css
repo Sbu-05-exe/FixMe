@@ -13,6 +13,10 @@ main {
     flex-grow: 1;
 }
 
+footer {
+    background-color: var(--primary);
+}
+
 /* classes */
 .row-container {
     display: flex;
@@ -24,5 +28,4 @@ main {
     flex-direction: column;
     /* border: 1px solid red; */
 }
-
 

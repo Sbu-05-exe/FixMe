@@ -15,21 +15,25 @@
             <img class="logo" src="../images/logo.png" alt="logo">
             <div class="space"></div>
             <div class="user-login-container row-container">
-                <button><a href=""> Login </a></button>
-                <button><a href=""> Register </a></button>
+                <button><a href="login.php"> Login </a></button>
+                <button><a href="register.php"> Register </a></button>
             </div>
         </div>
     </header>
     <main>
         <!-- column layout -->
         <div class="form-container">
-            <button>Book Repair</button>
+            <button class="book-me">Book Repair</button>
 
             <!-- page -->
-            <p>__________OR_________</p>
-            <form action="">
-                
-                <input type="text">
+            <p class="OR">OR</p>
+            <form id="index-form" action="">
+                <input 
+                    size="25" 
+                    placeholder="Enter job tracking number" 
+                    id="job-tracking-number" 
+                    type="text">
+                <i class="search large f icon"></i>
             </form>
 
             
@@ -60,22 +64,24 @@
         </div>
 
         <div class="faqs">
+            <h3>Frequently asked questions</h3>
             
-            <details>Answer
-                <summary>
+            <details class="first"><p class="answer">Answer</p>
+                <summary class="question">
                 Question
                 </summary>
             </details>
-            <details>Answer
-                <summary>
+            <details ><p class="answer">Answer</p>
+                <summary class="question">
                 Question
                 </summary>
             </details>
-            <details>Answer
-                <summary>
+            <details ><p class="answer">Answer</p>
+                <summary class="question">
                 Question
                 </summary>
             </details>
+
         </div>
         
     </main>
@@ -91,11 +97,11 @@
 
             <div class="icon-container">
                 <!-- row layout -->
-                <i class="facebook large f icon"></i>
-                <i class="whatsapp large f icon"></i>
-                <i class="instagram large f icon"></i>
-                <i class="youtube large f icon"></i>
-                <i class="twitter large f icon"></i>
+                <i class="facebook large f icon" id="icons"></i>
+                <i class="whatsapp large f icon" id="icons"></i>
+                <i class="instagram large f icon" id="icons"></i>
+                <i class="youtube large f icon" id="icons"></i>
+                <i class="twitter large f icon" id="icons"></i>
             </div>
         </div>
     </footer>

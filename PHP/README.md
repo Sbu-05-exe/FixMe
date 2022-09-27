@@ -3,12 +3,17 @@ This document will be used to keep track of the progress on our PHP files.
 #Backlog
 
 [X] turn the admin php into a form to easily add and remove php
-[] write the sql for each table (1 table left)
+[x] write the sql for each table
 [] change the password type to binary or something
 
+things left to do on the index page
+[] replace the lorem ipsum with proper text (including faqs)
+[] choose the fonts (this code should go into main.css)
+[] hook up login and register button to relevant page
+[] change the cursor to pointer when you hover on the social media links
+
+
 ### notes
-* Ideally I'd want to make the value of the id `auto_increment` but then I don't also want it to start counting from record 0?
-* Do we have to put not null on a foreign key or doesn't the foreign key constraint take care of that already? I just added the not null just in case.
 
 Initial Set up 
 [] Change pasword type to Binary or something?
@@ -17,14 +22,14 @@ Initial Set up
 ## HTML
 [] register
 [] login
-[] landing
+[x] landing (index.php)
 [] dashboard (user)
 [] dashboard (technician)
 [] dashboard (admin)
 
 
 ## CSS
-[]index.php
+[x]index.php
 []home.php
 
 ## PHP
