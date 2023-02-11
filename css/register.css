@@ -1,6 +1,4 @@
-
-
-main {
+#register-page main, #login-page main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,38 +22,141 @@ h1 {
     margin-bottom: 1rem;
 }
 
-#register-form {
+/* layout */
+form.padded  {
     display: flex;
     flex-direction: column;
     padding: 3rem;
-    /* background-color: var(--primary); */
 }
 
-#register-form input[type="text"], #register-form input[type="password"] {
+.create-form input[type="text"], .create-form input[type="password"], .create-form input[type="email"]  {
     padding: 1rem;
-    width: 15vw;
+    width: 300px;
     border-width: 0 0 0 0;
     border-bottom: 1px solid black;
     border-radius: 0px;
     margin: 0.5rem;
+    outline: none;
+    transition: 0.3s ease;
 }
 
-#register-form input[type="submit"] {
+.update-form input[type="text"], .update-form input[type="email"], .update-form input[type="password"], .update-form select, .update-form input[type="number"], .update-form input[type="date"] {
+    padding: 1rem;
+    width: 300px;
+    border-width: 0 0 0 0;
+    border: 1px solid black;
+    border-radius: 0px;
+    margin: 0.5rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.update-form input:focus {
+    border-color: var(--primary);
+}
+
+.update-form select {
+    color: black;
+}
+
+.update-form input[type="file"] {
+    padding: 1rem;
+}
+
+input.error {
+    border-color: red !important;
+}
+
+input.error ~ p {
+    color: red !important;
+    /* text-align: center; */
+}
+
+.error {
+    color: red !important;
+}
+ 
+.create-form input[type="text"]:focus, .create-form input[type="password"]:focus, .create-form input[type="email"]:focus {
+    border-bottom: 1px solid var(--primary);
+}
+
+#login-form input[type="text"]:focus, #login-form input[type="password"]:focus {
+    border-bottom: 1px solid var(--primary);
+}
+
+.create-form input[type="submit"], .create-form input[type="submit"], .update-form input[type="submit"] {
     padding: 1rem;
     border: 0px;
+    /* margin-bottom: 3rem; */
     background-color: var(--primary);
-    margin-bottom: 3rem;
+    border: 1px solid var(--primary);
+    transition: 0.1s ease-out;
+    width: 25rem;
+}
+
+#register-form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items:center;
+    width: 25vw;
+    /* border: 1px solid red; */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 25vw;
+}
+
+.create-form input[type="submit"]:hover, .update-form input[type="submit"]:hover {
+    cursor: pointer;
+    border: 3px solid var(--primary);
+    background-color: white; 
+    color: var(--primary);
+}
+
+input[disabled] {
+    color:  #444;
+    background-color:  #ccc !important;
+    border:  none !important;
+
+}
+
+textarea {
+    resize: none;
+    border: 1px solid;
+    padding: 1rem;
+    outline: none;
+    transform: translateX(8px);
+    width:  95%;
+}
+
+textarea:focus {
+    border-color: var(--primary);
+}
+
+#login-form .checkbox-container {
+    display: flex;
+    padding: 1rem 0;
 }
 
 
-.register-display {
-    height: 60vh;
-    box-shadow: 20px 20px 20px rgba(100,100,100, 0.3)
+.register-display, .login-display {
+    display: flex;
+    height: 600px;
+    box-shadow: 20px 20px 80px rgba(100,100,100, 0.3);
+}
+
+.login-display {
+    flex-direction: row-reverse;
 }
 
 .background {
     height: 100%;
-    width: auto;
+    width: 100%;
 }
 
 .background img {
@@ -63,3 +164,23 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
+
+label {
+    position: relative;
+    overflow: visible;
+}
+
+#delete-device {
+    background-color:  #fc633d;
+    border:  0px;
+}
+
+#show-hide-icon {
+    position: absolute;  
+    transform: translate(-30px, 20px);
+}
+
+#show-hide-icon:hover {
+    cursor: pointer;
+}
+

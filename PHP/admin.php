@@ -7,13 +7,14 @@
     <title>Admin Page</title>
 </head>
 <body>  
-    <form action="admin.php" >
+    <a href="admin.php">refresh</a>
+    <form action="admin.php" method="POST" >
         <h1>Drop Table</h1>
-        <input type="text" name="tablename" placeholder="tablename">
+        <input type="text" name="remove-tablename" placeholder="tablename">
         <input type="submit" name="submit" value="delete">
 
         <h2>Create Table</h2>
-        <input type="text" name="tablename"  placeholder="tablename" col="100"> <br/>
+        <input type="text" name="add-tablename"  placeholder="tablename" col="100"> <br/>
         <textarea type="textarea" name="sql"> </textarea>
         <input type="submit" name="submit" value="create">
     </form>
@@ -27,25 +28,26 @@
     //connect to db
 
     //CREATE QUERIES
-    $createUsertable = "CREATE TABLE Users ( userID INT NOT NULL, 
-                                            firstName varchar(30), 
-                                            lastName varchar(30),
-                                            userName varchar(30) NOT NULL,
-                                            password varchar(30) NOT NULL,
-                                            userType ENUM('user', 'technician', 'admin') NOT NULL,
-                                            PRIMARY KEY (userID))";
+    $createUsertable = "CREATE TABLE Users ( userID INT NOT NULL AUTO_INCREMENT, 
+	firstName varchar(30), 
+	lastName varchar(30),
+	userName varchar(30) NOT NULL,
+	password varchar(30) NOT NULL,
+	userType ENUM('user', 'technician', 'admin') NOT NULL,
+	PRIMARY KEY (userID))";
+    $altertable ="ALTER TABLE users AUTO_INCREMENT=1000000000"; 
 
     // this sql query has been tested and works
     $createDeviceTable = "CREATE TABLE Devices (deviceID INT NOT NULL,
                                             userID INT,
                                             category ENUM('desktop', 'laptop', 'tablet') NOT NULL,
                                             name varchar(30) NOT NULL,
-                                            FOREIGN KEY (userID) REFERENCES Users(userID))
-                                            PRIMARY KEY(deviceID)";
+                                            FOREIGN KEY (userID) REFERENCES Users(userID)),
+                                            PRIMARY KEY (deviceID)";
     // this sql query has been tested and works
 
     
-    $createRepairJobTable = "CREATE TABLE RepairJobs (repairJobID INT NOT NULL,
+    $createRepairJobTable = "CREATE TABLE RepairJobs (repairJobID INT NOT NULL AUT,
                                             userID INT NOT NULL,
                                             deviceID INT NOT NULL,
                                             description VARCHAR(255),
@@ -57,16 +59,18 @@
     //is the Estimated number of Days until Completion
     // this sql query has been tested and works
 
-    $createPartsTable = "CREATE TABLE parts (PartID INT NOT NULL PRIMARY KEY, 
+    $createPartsTable = "CREATE TABLE parts (PartID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
                                                 Price DECIMAL (10,2), 
                                                 Name VARCHAR (30), 
                                                 repairJobID INT, 
-                                                FOREIGN KEY (repairJobID) REFERENCES RepairJobs(repairJobID) )";
+                                                FOREIGN KEY (repairJobID) REFERENCES RepairJobs(repairJobID))";
 
-    $createTechnicianTable = "CREATE TABLE technician (TechnicianID INT NOT NULL PRIMARY KEY,
+    $createTechnicianTable = "CREATE TABLE technician (TechnicianID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                                                        userID INT,
                                                         Salary DECIMAL(10, 2), 
                                                         Experience VARCHAR (30), 
-                                                        Picture VARCHAR (30) );";
+                                                        Picture VARCHAR (30) );
+                                                        FOREIGN KEY (userID) REFERENCES users(userID))";
 
     $createJobGroupTable = "CREATE TABLE jobGroup (repairJobID INT NOT NULL, 
                                                     TechnicianID INT NOT NULL, 
@@ -110,11 +114,12 @@
 
     if (isset($_REQUEST["submit"])) {
         if ($_REQUEST["submit"] == "delete") {
-            $tablename = $_REQUEST["tablename"];
+            $tablename = $_REQUEST["remove-tablename"];
+            
             destroyTable($tablename);
         } elseif($_REQUEST["submit"] == "create") {
 
-            $tablename = $_REQUEST["tablename"];
+            $tablename = $_REQUEST["add-tablename"];
             $sql = $_REQUEST["sql"];
             createTable($sql, $tablename);
         }

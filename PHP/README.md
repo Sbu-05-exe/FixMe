@@ -16,25 +16,55 @@ things left to do on the index page
 ### notes
 
 Initial Set up 
-[] Change pasword type to Binary or something?
+[] Change pasword type to Binary or something
+[] encrypt already stored passwords and resave 
 
 
 ## HTML
-[] register
-[] login
+[x] register
+[x] login
 [x] landing (index.php)
 [] dashboard (user)
 [] dashboard (technician)
 [] dashboard (admin)
 
+## JS
+[x] add register form restriction to prevent unsanitized data from being submitted 
 
 ## CSS
-[x]index.php
-[]home.php
+[x] index.php
+[x] login.php
+[x] register.php
+
 
 ## PHP
-[]
-
+[x] login
+[x] register
+[] logout
 ## Queries
-[] create new user
-[] create new 
+[x] create new user
+[x] create new device
+[] delete device
+
+# bugs
+- need to destroy session when you sign out. (otherwise funny things happen when you try to log in with someone elses account)
+
+# tasks
+
+[] add enum to technician (to see the status of them working (if they have resigned or if they're on leave or if they work for us still))
+[x] find a default picture for devices
+[] find a landing page picture
+[x] add picture
+[] log out functionality
+[] switch between different modes (user, technician admin if possible)
+[] make the technician profile page, exactly like the user profile page (copy past job)
+[] make repair job view 
+[] add number of active assigned jobs to technicians (jj)
+
+
+
+# Bells and whistles
+
+ - all pages mobile friendly
+ - slideover animation for login 
+ - match default icon to device type IF image in database == null

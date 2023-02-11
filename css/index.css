@@ -17,15 +17,24 @@
     align-items: center;
 }
 
-#index-page button {
-    border-width: 0;
-    height: 3rem;
-    margin-left: 2rem;
-    width: 10rem;
+.index-buttons {
+        cursor: pointer;
+        border: solid var(--primary);
+        background-color: var(--primary); 
+        color: black;
+        padding: 1rem;
+        width: 10rem;
+        margin-left: 2rem;
+        border-radius: 10px;
+
+}
+
+.index-buttons:hover{
+    cursor: pointer;
     border: 3px solid var(--primary);
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px;
+    background-color: white; 
+    color: var(--primary);
+    transition: 0.3s;
 }
 
 #index-page a {
@@ -60,11 +69,13 @@
 .listing {
     max-width: 30vw;
     padding: 2rem;
+    /* border: solid red 1px; */
 }
 
 .listing-container {
     display: flex;
     justify-content: space-around;
+    /* border: solid red 1px; */
 }
 
 /* form */
@@ -136,7 +147,7 @@ i.search:hover {
 
 .faqs {
     padding: 0rem 3rem;
-    margin-bottom:  3rem ;
+    margin:  3rem 0;
 }
 
 
@@ -160,4 +171,14 @@ details > p.answer {
 details:hover {
     cursor: pointer;    
 }
+#about-us {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 4rem;
+}
 
+#story-img {
+    width: 20vw;
+    height: auto;
+}

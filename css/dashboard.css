@@ -1,0 +1,320 @@
+#user-dashboard, #technician-dashboard, #admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.top-banner {
+    display:  flex;
+    flex-direction:  row;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    width: 4vw;
+    background-color: var(--primary);
+    height: 100%;
+}
+
+.top-banner {
+    padding: 1rem;
+    width: 100%;
+}
+
+.menu i {
+    padding: 2rem 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease;
+}
+
+.menu i:hover {
+     color: white;
+     transform: scale(1.2);
+}
+
+.top-banner i {
+    transition: 0.1s ease-in;
+}
+
+.top-banner i:hover {
+    /* color: red; */
+    transform: scale(1.2);
+}
+
+/* dashboard page */
+
+.updates h2 {
+    margin-bottom: 5rem;
+}
+.updates {
+    flex-grow:8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    /* justify-content: space-between; */
+    /* border: 1px solid red; */
+}
+
+.no-notifications-pic {
+    width: 20vw;
+    height: auto
+
+}
+
+.contact-section {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+}
+
+td, th {
+    padding: 1rem;
+}
+
+
+
+
+/* profile page */
+.update-details {
+    display: flex;
+}
+
+.devices-section {
+    padding-top: 3rem;
+    width: 40vw;
+    display:  flex;
+    flex-direction:  column;
+} 
+
+.devices-section .row-container {
+    flex-wrap:  wrap;
+}
+
+.device {
+    display: flex;
+    flex-direction: column;
+    margin-right:  1vw;
+    margin-bottom:  1vw;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    height: 18vw;
+    /*height: 300px;*/
+    transition: 0.1s ease;
+}
+
+.device img, .device i {
+    height: 200px;
+    margin: 0
+}
+
+#device-img {
+    height: 6vw;
+    width: auto;
+}
+
+.device p {
+    margin:  0;
+}
+
+#add-device {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #444;
+    width: 12vw;
+    height:  18vw;
+    transition: 0.3s ease;
+}
+
+#add-device:hover, .device:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 20px rgba(100,100,100, 0.3)
+}
+
+#add-device .caption {
+    text-align: center;
+    height:  auto;
+    pointer-events: none;
+}
+
+#add-device .captionText {
+    pointer-events: auto;
+}
+
+
+div.caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    height: 100px;
+}
+
+#user-dashboard > div {
+    width: 100%;
+}
+
+#user-dashboard .content-section, #admin-dashboard .content-section {
+    height: 90%;
+    /* height: 100vh; */
+    width: 100%;
+}
+
+/* repair page */
+#repairs-page{
+    height: 90%;
+    /* max-height: 100vh; */
+}
+
+/*  */
+
+.repair-job-info-section {
+    padding: 3rem ;
+    height:  100%;
+    background-color:  #444;
+    color: white;
+    width:  34vw;
+    display: flex;
+    justify-content: center;
+}
+
+.progress-section {
+    padding:  3rem ;
+    background-color:  #ccc;
+    justify-content:  space-around;
+    width:  30vw;
+    height: 100%;
+    /*border:  1px solid red;*/
+}
+
+
+
+.technical-info {
+    padding:  3rem;
+    height: 100%;
+}
+
+.technical-info table {
+    width: 20vw;
+}
+
+
+.technical-info div:first-child {
+    margin-bottom: 3rem;
+}
+
+.technician-info > div {
+    display: flex;
+}
+
+.progress-section > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 95%;
+}
+
+/* .progress-section > div {
+    /* padding-left: 3rem; 
+    /* border-left: 10px solid var(--primary); 
+    /* border-radius: 100px; 
+}*/
+
+
+.progress-section .status {
+
+    border-left: 1rem solid white;
+    padding-left: 1rem; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 1rem; */
+    /* margin-left: 1rem; */
+}
+
+.progress-section .status.checked {
+    /* border-color: var(--primary); */
+    border-color: var(--primary);
+}
+
+.progress-section .status:before {
+    border: 3px solid white;
+    content: "";
+    background-color: white;
+    /* height: 100%; */
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100px;
+    margin-right: 4rem;
+    transform: translate(-2.4rem, 0);
+    /* transform: translateX(1rem); */
+}
+
+.progress-section .status.checked:before {
+    border: 3px solid ;
+    content: "";
+    border-color: var(--primary);
+    background-color: var(--primary);
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.technician-profile-pic {
+    /* max-width: 10vw; */
+    height: 10vw;
+    /* width: auto; */
+    /* border-radius: 100px; */
+}
+
+
+.notification-container {
+    border:  4px solid var(--primary);
+    width:  50vw;
+    text-align: center;
+    padding:  1rem;
+    height:  10vh;
+    margin-bottom:  2rem;
+}
+.notification-container p{
+    font-size:  16px;
+}
+
+.notification-heading {
+    position: absolute;
+    border: 1px solid var(--accent);
+    background-color:  var(--accent);
+    transform:  translateY(-2.5rem);
+    padding:  1rem;
+
+}

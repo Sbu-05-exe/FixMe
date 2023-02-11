@@ -1,0 +1,42 @@
+table th {
+    background-color: var(--primary);
+    color: black;
+}
+
+table .selectable {
+    cursor: pointer;
+}
+
+table .selected {
+
+    background-color: var(--accent) !important;
+    color: black;
+    /* color: var(--primary); */
+}
+
+table .selectable:hover {
+    /* border: solid var(--primary); */
+    /* border-width: 3px 0; */
+    background-color: #efefef;
+    color: var(--primary);
+    /* background-color: var(--primary); */
+}
+
+table .selectable:nth-child(2n):hover {
+    /* border: solid var(--primary); */
+    /* border-width: 3px 0; */
+    /* background-color: #ddd; */
+    /* color: var(--primary); */
+    /* background-color: var(--primary); */
+}
+
+.total {
+    /* border-bottom:  double black; */
+    /* border-top:  double black; */
+    border: solid black;
+    border-width: 2px 0;
+}
+
+.view-table tr:nth-child(2n) {
+    /* background-color: #ccc; */
+}

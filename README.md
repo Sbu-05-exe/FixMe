@@ -22,4 +22,10 @@ PHP
 
 Queries
 [] create new user
-[] create new 
+[] create new
+
+
+
+$query = "select extract(month from date) as month, 
+                       sum(inspectionFee + repairFee) as total from ctrls.repairjobs
+                       group by extract(month from date);";

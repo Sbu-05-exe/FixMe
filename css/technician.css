@@ -1,0 +1,93 @@
+#close-icon-container {
+    width: 100%;
+    /* border: 1px solid red; */
+    display:flex;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 10;
+    color: white;
+    /* background-color: white; */
+}
+
+.modal-body:after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height: 100vh;
+    opacity: 0.8;
+    z-index: 2;
+    transition: 0.4s ease;
+    padding: 3rem;
+}
+
+.content-section {
+    width: 100%;
+}
+
+.content-section .row-container{
+    justify-content: center;
+}
+
+.content-section section button{
+    padding: 1rem;
+    /*border: 3px dashed white;*/
+    color: white;
+    border:  none;
+    width:  100%;
+    background-color: black;
+}
+
+
+button a {
+    color:  var(--primary);
+    /*color: var(--primary);*/
+}
+
+
+#order-button {
+    border: none;
+    /* border: 2px solid var(--primary);  */
+    background-color: #ccc;
+    color: black; 
+    transition: 0.2s ease;
+}
+
+#order-button:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 3px solid black;
+}
+
+section {
+    padding: 3rem;
+}
+
+.table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-color: dark;
+    height: 50vh;
+}
+
+.table-container thead {
+    position: absolute;
+}
+
+.table-container td, .table-container th {
+    min-width: 100px;
+}
+
+/* tasks page */
+#order-part {
+    position: absolute;
+    top: 20vh;
+    left: 35vw;
+    /* border: 1px solid red; */
+    z-index: 5;
+    background-color: white;
+    padding: 5rem;
+    
+}

@@ -1,7 +1,8 @@
 /* elements */
 
 * {
-    --primary: #2fcc76 
+    --primary: #2fcc76; 
+    --accent: #7dfab6;
 }
 
 body {
@@ -21,11 +22,44 @@ footer {
 .row-container {
     display: flex;
     flex-direction: row;
+
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     /* border: 1px solid red; */
+}
+
+.hide {
+    display: none;
+}
+
+.hidden {
+    /* visibility:  hidden; */
+    opacity: 0;
+}
+
+.center-children {
+    display:  flex;
+    justify-content: center;
+    align-items:  center;
+}
+
+.click-through {
+    z-index:  -1;
+}
+
+.spacer {
+    flex-grow:  1;
+}
+
+a.icon {
+    color: black;
 }
 
